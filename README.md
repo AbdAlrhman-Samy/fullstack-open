@@ -15,8 +15,11 @@ Below I'll be documenting how it goes, the hours, the problems I faced and so on
 
 2.   **Part1:** 
 		-1.a: 2 hours
+
 		-1.b: 
+
 		-1.c:
+        
 		-1.d:
 		
 3. **Part2:**
