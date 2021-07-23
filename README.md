@@ -24,6 +24,7 @@ Below I'll be documenting how it goes, the hours, the problems I faced and so on
 		-1.d:
 		
 3. **Part2:**
+
 		-2.a:
 
 		-2.b: 
