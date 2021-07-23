@@ -14,6 +14,7 @@ Below I'll be documenting how it goes, the hours, the problems I faced and so on
 1.  **Part0:** 2 hours
 
 2.   **Part1:** 
+
 		-1.a: 2 hours
 
 		-1.b: 
@@ -30,5 +31,5 @@ Below I'll be documenting how it goes, the hours, the problems I faced and so on
 		-2.c:
 
 		-2.d:
-        
+
 		-2.e:
