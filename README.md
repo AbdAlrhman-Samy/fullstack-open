@@ -19,6 +19,6 @@ Below I'll be documenting how it goes, the hours, the problems I faced and so on
 
 		-1.b: 1:30 hours
 
-		-1.c:
+		-1.c: 1 hour
 
-		-1.d:
+		-1.d: 2 hours
