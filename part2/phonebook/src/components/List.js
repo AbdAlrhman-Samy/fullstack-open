@@ -3,7 +3,7 @@ import React from 'react'
 const List = ({contacts}) => {
     return (
         <ul>
-            {contacts.map((contact, i)=> <li key={i}> {contact.name} </li>)}
+            {contacts.map((contact)=> <li key={contact.name}> {contact.name} </li>)}
         </ul>
     )
 }

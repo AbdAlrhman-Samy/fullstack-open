@@ -2,14 +2,22 @@ import React, { useState } from 'react'
 import List from './components/List'
 const App = () => {
 
-  const [ contacts, setContacts ] = useState([{ name: 'Arto Hellas', id: 1 }])
+  const [ contacts, setContacts ] = useState([{ name: 'Arto Hellas'}])
 
   const [ newName, setNewName ] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const nameObject = { name: newName, id: contacts.length+1}
-    setContacts(contacts.concat(nameObject))
+    const allNames = contacts.map(contact=> { return contact.name})
+    const nameObject = { name: newName }
+    
+    if (allNames.includes(newName)){
+      alert(`${newName} already exists`)
+      setNewName('')
+      return
+
+    } else { setContacts(contacts.concat(nameObject)) }
+    
     setNewName('')
     console.log(nameObject);
   }
@@ -24,7 +32,7 @@ const App = () => {
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="contact-name">Name</label>
-        <input type="text" id="contact-name" value={newName} onChange={handleInputChange}/> <br/>
+        <input type="text" id="contact-name" value={newName} onChange={handleInputChange} required/> <br/>
         <button type="submit">Add Contact</button>
       </form>
 
