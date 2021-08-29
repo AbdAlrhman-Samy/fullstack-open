@@ -15,9 +15,12 @@ const App = () => {
   const [filter, setFilter] = useState(false)
 
   const handleFilterChange = (e) => {
+    setFilter(false)
+
     const keyword = e.target.value.toLowerCase();
     if (keyword === null) {
       setFiltered(contacts);
+      setFilter(false)
 
     } else {
       setFilter(true)
@@ -25,7 +28,7 @@ const App = () => {
       const filteredContacts = contacts.filter((contact) => {
         return contact.name.toLowerCase().includes(keyword);
       });
-      
+
       setFiltered(filteredContacts);
     }
   };
