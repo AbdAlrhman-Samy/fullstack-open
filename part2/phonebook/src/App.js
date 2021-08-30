@@ -11,37 +11,29 @@ const App = () => {
     { name: "Mary Poppendieck", number: "39-23-6423122" },
   ]);
 
-  const [filtered, setFiltered] = useState([]);
-  const [filter, setFilter] = useState(false)
+  const [filtered, setFiltered] = useState(contacts);
+  const [filter, setFilter] = useState(false);
 
   const handleFilterChange = (e) => {
-    setFilter(false)
+    const keyword = e.target.value;
+    setFilter(keyword);
+    const filteredContacts = contacts.filter((contact) => {
+      return contact.name.toLowerCase().includes(keyword.toLowerCase());
+    });
 
-    const keyword = e.target.value.toLowerCase();
-    if (keyword === null) {
-      setFiltered(contacts);
-      setFilter(false)
-
-    } else {
-      setFilter(true)
-
-      const filteredContacts = contacts.filter((contact) => {
-        return contact.name.toLowerCase().includes(keyword);
-      });
-
-      setFiltered(filteredContacts);
-    }
+    setFiltered(filteredContacts);
   };
-
 
   return (
     <div>
       <h1>My Phonebook</h1>
       <Filter handleFilterChange={handleFilterChange} />
+
       <h2>Add a Contact</h2>
       <Form setContacts={setContacts} contacts={contacts} />
+
       <h2>Contacts</h2>
-      <List contacts={filter? filtered : contacts} />
+      <List contacts={filter ? filtered : contacts} />
     </div>
   );
 };

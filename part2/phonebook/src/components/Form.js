@@ -6,11 +6,9 @@ const Form = ({ setContacts, contacts }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const allNames = contacts.map((contact) => {
-      return contact.name;
-    });
     const contactObject = { name: newName, number: number };
 
+    const allNames = contacts.map( contact => contact.name );
     if (allNames.includes(newName)) {
       alert(`${newName} already exists`);
       setNewName("");
@@ -20,17 +18,13 @@ const Form = ({ setContacts, contacts }) => {
     }
 
     setNewName("");
-    setNumber('')
+    setNumber("");
     console.log(contactObject);
   };
 
-  const handleNameChange = (e) => {
-    setNewName(e.target.value);
-  };
+  const handleNameChange = (e) => setNewName(e.target.value);
 
-  const handleNumChange = (e) => {
-    setNumber(e.target.value);
-  };
+  const handleNumChange = (e) => setNumber(e.target.value);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -41,7 +35,7 @@ const Form = ({ setContacts, contacts }) => {
         value={newName}
         onChange={handleNameChange}
         required
-      />{" "}
+      />
       <br />
 
       <label htmlFor="contact-number">Number</label>
