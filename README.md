@@ -25,3 +25,5 @@ Below I'll be documenting how it goes.
 3.  **Part2:** 
 
 		-2.a: 2 hours
+
+		-2.b: 1:30 hours for most of it, 2 days trying to make Filtering work, even while asleep lol
