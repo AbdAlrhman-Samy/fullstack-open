@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import List from "./components/List";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
 
-const App = () => {
-  const [contacts, setContacts] = useState([
-    { name: "Arto Hellas", number: "040-123456" },
-    { name: "Ada Lovelace", number: "39-44-5323523" },
-    { name: "Dan Abramov", number: "12-43-234345" },
-    { name: "Mary Poppendieck", number: "39-23-6423122" },
-  ]);
+import axios from "axios";
 
+const App = () => {
+  const [contacts, setContacts] = useState([]);
   const [filtered, setFiltered] = useState(contacts);
   const [filter, setFilter] = useState(false);
+
+  useEffect(()=>{
+    axios.get('http://localhost:3001/persons').then(res=>{
+      setContacts(res.data)
+    })
+  },[])
 
   const handleFilterChange = (e) => {
     const keyword = e.target.value;

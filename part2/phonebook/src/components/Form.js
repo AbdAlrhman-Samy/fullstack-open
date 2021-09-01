@@ -6,7 +6,7 @@ const Form = ({ setContacts, contacts }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const contactObject = { name: newName, number: number };
+    const contactObject = { name: newName, number: number, id: contacts.length+1 };
 
     const allNames = contacts.map( contact => contact.name );
     if (allNames.includes(newName)) {
