@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const List = ({contacts}) => {
-    return (
-        <ul>
-            {contacts.map((contact)=> <li key={contact.id}> <strong>{contact.name}:</strong> {contact.number} </li>)}
-        </ul>
-    )
-}
+const List = ({ contacts, deleteContact }) => {
+  return (
+    <ul>
+      {contacts.map((contact) => (
+        <li key={contact.id}>
+          <strong>{contact.name}:</strong> {contact.number}
+          <button onClick={()=>deleteContact(contact.id)}>Delete</button>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
-export default List
+export default List;

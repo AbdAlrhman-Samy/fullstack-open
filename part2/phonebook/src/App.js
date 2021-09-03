@@ -3,16 +3,19 @@ import List from "./components/List";
 import Form from "./components/Form";
 import Filter from "./components/Filter";
 
-import axios from "axios";
+import contactsService from './services/contacts'
 
 const App = () => {
+
+
   const [contacts, setContacts] = useState([]);
   const [filtered, setFiltered] = useState(contacts);
   const [filter, setFilter] = useState(false);
 
   useEffect(()=>{
-    axios.get('http://localhost:3001/persons').then(res=>{
-      setContacts(res.data)
+    contactsService.getAll()
+    .then(myContacts=>{
+      setContacts(myContacts)
     })
   },[])
 
@@ -26,6 +29,21 @@ const App = () => {
     setFiltered(filteredContacts);
   };
 
+  const deleteContact = (id) => {
+    const deletedContact = contacts.find(contact=> contact.id === id)
+    const confirm = window.confirm(`Are you sre you want to delete ${deletedContact.name}?`)
+
+    if (confirm){
+      contactsService.deleteContact(id)
+      .then(()=>setContacts(contacts.filter(contact=> contact.id !== id)))
+      .catch(err=> alert('already deleted.'))
+      console.log(`deleted ${id}`);
+      return
+    } 
+    console.log('cool');
+    return
+  }
+
   return (
     <div>
       <h1>My Phonebook</h1>
@@ -35,7 +53,7 @@ const App = () => {
       <Form setContacts={setContacts} contacts={contacts} />
 
       <h2>Contacts</h2>
-      <List contacts={filter ? filtered : contacts} />
+      <List contacts={filter ? filtered : contacts} deleteContact={deleteContact}/>
     </div>
   );
 };
