@@ -16,14 +16,20 @@ Below I'll be documenting how it goes.
 
 		-1.a: 2 hours
 
-		-1.b: 1:30 hours
+		-1.b: 1.5 hours
 
 		-1.c: 1 hour
 
-		-1.d: 2:30 hours
+		-1.d: 2.5 hours
 
 3.  **Part2:** 
 
 		-2.a: 2 hours
 
-		-2.b: 1:30 hours for most of it, 2 days trying to make Filtering work, even while asleep lol
+		-2.b: 1:5 hours for most of it, 2 days trying to make Filtering work, even while asleep lol
+
+		-2.c: 4 hours
+
+		-2.d: 4 hours
+
+		-2.e: 1.5 hours
